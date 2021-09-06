@@ -1,0 +1,16 @@
+Reference,Value,Description,Manufacturer_Name
+J1,IWR6843_conn,60 Position, 0.50 mm Q Strip&reg
+J6,Ultra96_HS_conn,BergStak 0.80mm Pitch, Mezzanine Connector
+J2,MagSampler_0_conn,Connector,RJ45
+J3,MagSamler_2_conn,Connector,RJ45
+J5,MagSampler_3_conn,Connector,RJ45
+J4,MagSampler_1_conn,Connector,RJ45
+J12,Ultra96_LS_out,Connector_Generic,Conn_02x20_Odd_Even
+J10,Ultra96_LS_conn,Connector_Generic,Conn_02x20_Odd_Even
+J7,Conn_01x01_Male,Connector,Conn_01x01_Male
+J9,Conn_01x04_Male,Connector,Conn_01x04_Male
+J8,Conn_01x02_Male,Connector,Conn_01x02_Male
+R1,3.3k,Device,R_Small
+R2,15k,Device,R_Small
+R3,22k,Device,R_Small
+J11,Ultra96_HS_out,Connector_Generic,Conn_02x20_Odd_Even
