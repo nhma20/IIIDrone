@@ -47,7 +47,22 @@ entity BRAM_points is
         bram_addr   :   out STD_LOGIC_VECTOR(31 downto 0);
         bram_dout   :   out STD_LOGIC_VECTOR(31 downto 0);
         bram_en     :   out STD_LOGIC;
-        bram_wr     :   out STD_LOGIC_VECTOR(3 downto 0)
+        bram_wr     :   out STD_LOGIC_VECTOR(3 downto 0);
+
+		-- 	Mag in ports:
+		ch0			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch0, axis0
+		ch1			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch0, axis1
+		ch2			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch0, axis2
+		ch3			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch1, axis0
+		ch4			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch1, axis1
+		ch5			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch1, axis2
+		ch6			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch2, axis0
+		ch7			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch2, axis1
+		ch8			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch2, axis2
+		ch9			:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch3, axis0
+		ch10		:	in	STD_LOGIC_VECTOR(11 downto 0);	-- ch3, axis1
+		ch11		:	in	STD_LOGIC_VECTOR(11 downto 0)	-- ch3, axis2
+		-- addr <= "ch" & "ax"
 
         --  Debug ports:
         
