@@ -133,7 +133,7 @@ begin
                         else 
                             s_data_out <= (others => '0');
                         end if;
-                        read_mag := read_mag + 1;
+                        --read_mag := read_mag + 1;
                         wait_cnt := wait_cnt + 1;
                     elsif wait_cnt = 2 then
                         s_bram_wr <= "1111";
@@ -144,6 +144,7 @@ begin
                     elsif wait_cnt = 4 then
                         wait_cnt := 0;
                         read_cnt := read_cnt + 1;
+                        read_mag := read_mag + 1;
                         address_var := std_logic_vector(unsigned(address_var) + unsigned(one));                                                              
                     else
                         wait_cnt := wait_cnt + 1;
@@ -174,11 +175,12 @@ begin
                         wait_cnt := wait_cnt + 1;
                     elsif wait_cnt = 4 then
                         wait_cnt := 0;
-                        read_cnt := read_cnt + 1;
+                        --read_cnt := read_cnt + 1;
                         address_var := std_logic_vector(unsigned(address_var) + unsigned(one));                                                              
                         if read_cnt mod 3 = 0 then
                             s_RAM_addr <= std_logic_vector(unsigned(s_RAM_addr) + unsigned(one(4 downto 0)));
                         end if;
+                        read_cnt := read_cnt + 1;
                     else
                         wait_cnt := wait_cnt + 1;
                     end if;
