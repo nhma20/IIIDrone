@@ -175,12 +175,12 @@ begin
                         wait_cnt := wait_cnt + 1;
                     elsif wait_cnt = 4 then
                         wait_cnt := 0;
-                        --read_cnt := read_cnt + 1;
+                        read_cnt := read_cnt + 1;
                         address_var := std_logic_vector(unsigned(address_var) + unsigned(one));                                                              
                         if read_cnt mod 3 = 0 then
                             s_RAM_addr <= std_logic_vector(unsigned(s_RAM_addr) + unsigned(one(4 downto 0)));
                         end if;
-                        read_cnt := read_cnt + 1;
+                        --read_cnt := read_cnt + 1;
                     else
                         wait_cnt := wait_cnt + 1;
                     end if;
