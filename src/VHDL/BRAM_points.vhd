@@ -41,7 +41,7 @@ entity BRAM_points is
         data_in     :   in  STD_LOGIC_VECTOR(127 downto 0);
         irq_in      :   in  STD_LOGIC;
         i_num_points:   in std_logic_vector(4 downto 0);
-        o_address   :   out std_logic_vector(5 downto 0);
+        o_address   :   out std_logic_vector(4 downto 0);
         
         --  BRAM ports:
         bram_addr   :   out STD_LOGIC_VECTOR(31 downto 0);
@@ -59,6 +59,7 @@ architecture Behavioral of BRAM_points is
     signal s_address_out    :   std_logic_vector(5 downto 0) := "000000";
     signal s_bram_wr        :   std_logic_vector(3 downto 0) := "0000";
     signal s_data_out       :   std_logic_vector(31 downto 0) := (others => '0');
+    signal s_RAM_addr       :   std_logic_vector(4 downto 0) := "00000";
 begin
 
     ------------------------------------------------------------------------------
@@ -81,6 +82,7 @@ begin
                 reading := '1';
                 address_var := "010000";
                 read_xyz := 0;
+                s_RAM_addr <= "00000";
             end if;
             if reading = '1' then
                 if read_xyz < 3 then
@@ -102,6 +104,11 @@ begin
                         wait_cnt := 0;
                         read_cnt := read_cnt + 1;
                         address_var := std_logic_vector(unsigned(address_var) + unsigned(one));
+                                                               
+                        if read_cnt mod 3 = 0 then
+                            s_RAM_addr <= std_logic_vector(unsigned(s_RAM_addr) + unsigned(one(4 downto 0)));
+                        end if;
+                        
                     else
                         wait_cnt := wait_cnt + 1;
                     end if;
@@ -111,7 +118,9 @@ begin
                     end if;
                 else
                     read_xyz := 0;
+                    --s_RAM_addr <= std_logic_vector(unsigned(s_RAM_addr) + unsigned(one(4 downto 0)));
                 end if;
+                
             end if;
             s_address_out <= address_var;
         end if;
@@ -136,7 +145,7 @@ begin
     ------------------------------------------------------------------------------
 
 
-    o_address               <=  s_address_out;
+    o_address               <=  s_RAM_addr;
     bram_addr(31 downto 8)  <=  (30 => '1', others => '0');
     bram_addr(7 downto 0)   <=  s_address_out & "00"; -- 6 bits for addressing = 64 addresses
     bram_en                 <=  '1';
@@ -144,5 +153,4 @@ begin
     bram_wr                 <=  s_bram_wr;
 
 end Behavioral;
-
 
