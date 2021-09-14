@@ -50,7 +50,16 @@ entity points_RAM is
            o_data_rdy   : out STD_LOGIC;
            o_num_points : out STD_LOGIC_VECTOR(4 downto 0);
            --o_test       : out std_logic_vector(7 downto 0);
-           o_data_out   : out STD_LOGIC_VECTOR(127 downto 0)
+           o_data_out   : out STD_LOGIC_VECTOR(127 downto 0);
+
+		   RAM_val_0    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_1    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_2    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_3    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_4    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_5    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_6    : out STD_LOGIC_VECTOR(127 downto 0);
+		   RAM_val_7    : out STD_LOGIC_VECTOR(127 downto 0)
           );
 end points_RAM;
 
@@ -185,13 +194,13 @@ begin
     o_num_points <= std_logic_vector(to_unsigned(num_points_out, o_num_points'length));
     o_data_rdy <= s_data_rdy;
     
---    RAM_val_0 <= ram_0(0) when ram_selector = '0' else ram_1(0);
---    RAM_val_1 <= ram_0(1) when ram_selector = '0' else ram_1(1);
---    RAM_val_2 <= ram_0(2) when ram_selector = '0' else ram_1(2);
---    RAM_val_3 <= ram_0(3) when ram_selector = '0' else ram_1(3);
---    RAM_val_4 <= ram_0(4) when ram_selector = '0' else ram_1(4);
---    RAM_val_5 <= ram_0(5) when ram_selector = '0' else ram_1(5);
---    RAM_val_6 <= ram_0(6) when ram_selector = '0' else ram_1(6);
---    RAM_val_7 <= ram_0(7) when ram_selector = '0' else ram_1(7);
+    RAM_val_0 <= ram_0(0) when ram_selector = '0' else ram_1(0);
+    RAM_val_1 <= ram_0(1) when ram_selector = '0' else ram_1(1);
+    RAM_val_2 <= ram_0(2) when ram_selector = '0' else ram_1(2);
+    RAM_val_3 <= ram_0(3) when ram_selector = '0' else ram_1(3);
+    RAM_val_4 <= ram_0(4) when ram_selector = '0' else ram_1(4);
+    RAM_val_5 <= ram_0(5) when ram_selector = '0' else ram_1(5);
+    RAM_val_6 <= ram_0(6) when ram_selector = '0' else ram_1(6);
+    RAM_val_7 <= ram_0(7) when ram_selector = '0' else ram_1(7);
     
 end Behavioral;
