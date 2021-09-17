@@ -194,7 +194,7 @@ begin
     o_num_points <= std_logic_vector(to_unsigned(num_points_out, o_num_points'length));
     o_data_rdy <= s_data_rdy;
     
-    RAM_val_0 <= ram_0(0) when ram_selector = '0' else ram_1(0);
+	RAM_val_0 <= ram_0(0) when ram_selector = '0' else ram_1(0);
     RAM_val_1 <= ram_0(1) when ram_selector = '0' else ram_1(1);
     RAM_val_2 <= ram_0(2) when ram_selector = '0' else ram_1(2);
     RAM_val_3 <= ram_0(3) when ram_selector = '0' else ram_1(3);
