@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="BRAM_reader" location="/home/ffn/Nextcloud/Workspace/Vitis/BRAM_reader" platform="/home/ffn/Nextcloud/Workspace/Vitis/BRAM_storer/export/BRAM_storer/BRAM_storer.xpfm" platformUID="xilinx:ultra96v2::0.0(custom)" systemProject="BRAM_reader_system" sysConfig="BRAM_storer" runtime="cpp" cpu="standalone_psu_cortexa53_0" cpuInstance="psu_cortexa53_0" os="standalone" mssSignature="ce0ec7d2b11413d28190eb5628c12c9c">
+  <configuration name="Debug" id="xilinx.gnu.arm.a53.exe.debug.1458746566">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.arm.a53.exe.release.113364009" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>
